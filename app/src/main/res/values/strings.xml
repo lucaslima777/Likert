@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Likert</string>
+    <string name="error">error</string>
+    <string name="success">success</string>
+    <string name="tentar_novamente">tentar novamente</string>
+    <string name="enviar">enviar</string>
+    <string name="caracteres">140 caracteres</string>
+    <string name="o_que_foi_bom">o que foi bom?</string>
+    <string name="adorei">adorei</string>
+    <string name="gostei">gostei</string>
+    <string name="sei_l">sei lá</string>
+    <string name="n_gostei">não gostei</string>
+    <string name="ruim">ruim</string>
+    <string name="exp">o que achou\ndessa experiência?</string>
+</resources>

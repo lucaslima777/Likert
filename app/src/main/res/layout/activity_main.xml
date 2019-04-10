@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="20dp"
+                android:text="@string/exp"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                tools:ignore="MissingConstraints" />
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp"
+                android:stretchColumns="*"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title">
+
+                <!--Line 1-->
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/reaction1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_column="0"
+                        android:src="@drawable/ruimativo" />
+
+                    <ImageView
+                        android:id="@+id/reaction2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_column="1"
+                        android:src="@drawable/naogosteiativo" />
+
+                    <ImageView
+                        android:id="@+id/reaction3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_column="2"
+                        android:src="@drawable/seilaativo" />
+
+                    <ImageView
+                        android:id="@+id/reaction4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_column="3"
+                        android:src="@drawable/gosteiativo" />
+
+                    <ImageView
+                        android:id="@+id/reaction5"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_column="4"
+                        android:src="@drawable/adoreiativo" />
+
+                </TableRow>
+
+                <!--Column 2-->
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textReaction1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="@string/ruim"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/textReaction2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="@string/n_gostei"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/textReaction3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="2"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="@string/sei_l"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/textReaction4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="3"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="@string/gostei"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/textReaction5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="4"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:text="@string/adorei"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/table">
+
+                <View
+                    android:id="@+id/divisor"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/o_que_foi_bom"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divisor" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/holo_orange_dark"
+                    android:maxLength="140"
+                    android:textCursorDrawable="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/question" />
+
+                <TextView
+                    android:id="@+id/num_caracteres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/caracteres"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/question"
+                    app:layout_constraintTop_toBottomOf="@id/edt" />
+
+                <TextView
+                    android:id="@+id/send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/enviar"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/edt"
+                    app:layout_constraintTop_toBottomOf="@id/edt" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layoutResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/title">
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="20dp"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/tentar_novamente"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutResult" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <Switch
+        android:id="@+id/switch_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/success"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintEnd_toStartOf="@+id/switch_id"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/error"
+        android:textColor="@android:color/holo_red_light"
+        app:layout_constraintStart_toEndOf="@id/switch_id"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+
+</android.support.constraint.ConstraintLayout>
