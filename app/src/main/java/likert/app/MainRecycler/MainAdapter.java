@@ -61,9 +61,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainHolder> {
                 defaultReactions(i, imageViews, imagesColor, imagesDefault, textViews, textQuestions);
 
                 RecyclerClick recyclerClick = new RecyclerClick((OnClickRecycler) mContext);
-
                 recyclerClick.setPosition(i);
-                recyclerClick.execute();
             }
         });
 

@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void defaultReactions(int position) {
-        for (int i = 0; i <= 4; i++) {
+        for (int i = 0; i < MAX; i++) {
             if (i == position) {
                 imageViews.get(i).setImageDrawable(imagesColor.get(i));
                 textViews.get(i).setTypeface(null, Typeface.BOLD);

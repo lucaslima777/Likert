@@ -18,9 +18,6 @@ public class RecyclerClick {
 
     public void setPosition(int position) {
         this.position = position;
-    }
-
-    public void execute() {
         onClickRecycler.onClick(getPosition());
     }
 }
