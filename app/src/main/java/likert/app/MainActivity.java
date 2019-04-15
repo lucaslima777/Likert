@@ -3,7 +3,9 @@ package likert.app;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
@@ -37,32 +39,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppCompatEditText editText;
     private TextView counterText;
     private TextView question;
-
     private ArrayList<ImageView> imageViews = new ArrayList<>();
     private ArrayList<TextView> textViews = new ArrayList<>();
     private ArrayList<Drawable> imagesDefault = new ArrayList<>();
     private ArrayList<Drawable> imagesColor = new ArrayList<>();
     private ArrayList<String> textQuestions = new ArrayList<>();
-
     private ConstraintLayout layout, layoutResult;
-
     private Switch switchResult;
-
     private TextView send;
     private TextView title;
     private TextView textInfo;
     private TextView refresh;
-
     private TableLayout tableLayout;
-
     private Button prox;
-
     private AddArrays addArrays;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setSubtitle(getString(R.string.table_toolbar));
+
         init();
         registerClick();
 
@@ -158,8 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public void sizeImage(int i) {
-        int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, getResources().getDisplayMetrics());
-
+        int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
         imageViews.get(i).getLayoutParams().height = dimensionInDp;
         imageViews.get(i).getLayoutParams().width = dimensionInDp;
         imageViews.get(i).requestLayout();
@@ -171,29 +168,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reaction3 = (ImageView) findViewById(R.id.reaction3);
         reaction4 = (ImageView) findViewById(R.id.reaction4);
         reaction5 = (ImageView) findViewById(R.id.reaction5);
-
         textReaction1 = (TextView) findViewById(R.id.textReaction1);
         textReaction2 = (TextView) findViewById(R.id.textReaction2);
         textReaction3 = (TextView) findViewById(R.id.textReaction3);
         textReaction4 = (TextView) findViewById(R.id.textReaction4);
         textReaction5 = (TextView) findViewById(R.id.textReaction5);
-
         editText = (AppCompatEditText) findViewById(R.id.edt);
         counterText = (TextView) findViewById(R.id.num_caracteres);
         question = (TextView) findViewById(R.id.question);
-
         layout = (ConstraintLayout) findViewById(R.id.layout);
         layoutResult = (ConstraintLayout) findViewById(R.id.layoutResult);
-
         switchResult = (Switch) findViewById(R.id.switch_id);
         send = (TextView) findViewById(R.id.send);
         title = (TextView) findViewById(R.id.title);
         textInfo = (TextView) findViewById(R.id.info);
         refresh = (TextView) findViewById(R.id.refresh);
-
         tableLayout = (TableLayout) findViewById(R.id.table);
-
         prox = (Button) findViewById(R.id.prox);
-
     }
 }

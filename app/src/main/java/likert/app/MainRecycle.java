@@ -31,26 +31,22 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
     private ArrayList<Drawable> imagesColor = new ArrayList<>();
     private ArrayList<String> textReactions = new ArrayList<>();
     private ArrayList<String> textQuestions = new ArrayList<>();
-
     private AppCompatEditText editText;
     private TextView counterText;
     private TextView question;
-
     private ConstraintLayout layout, layoutResult;
-
     private Switch switchResult;
-
     private TextView send;
     private TextView title;
     private TextView textInfo;
     private TextView refresh;
-
     private AddArrays addArrays;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_recycle);
+        getSupportActionBar().setSubtitle(getString(R.string.recycler_toolbar));
 
         init();
         registerClick();
@@ -104,17 +100,13 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
         editText = (AppCompatEditText) findViewById(R.id.edt);
         counterText = (TextView) findViewById(R.id.num_caracteres);
         question = (TextView) findViewById(R.id.question);
-
         layout = (ConstraintLayout) findViewById(R.id.layout);
         layoutResult = (ConstraintLayout) findViewById(R.id.layoutResult);
-
         switchResult = (Switch) findViewById(R.id.switch_id);
         send = (TextView) findViewById(R.id.send);
         title = (TextView) findViewById(R.id.title);
         textInfo = (TextView) findViewById(R.id.info);
         refresh = (TextView) findViewById(R.id.refresh);
-
-
     }
 
     @Override
