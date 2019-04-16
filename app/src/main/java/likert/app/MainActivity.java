@@ -9,8 +9,6 @@ import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +20,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import likert.app.Util.AddArrays;
+import likert.app.Util.TitleColor;
 
 import static likert.app.Util.Constant.BAD;
 import static likert.app.Util.Constant.LIKE;
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TableLayout tableLayout;
     private Button prox;
     private AddArrays addArrays;
+    private TitleColor titleColor;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addArrays = new AddArrays(this);
         addArrays.addArrayList();
         addArrayList();
+        titleColor = new TitleColor(this);
     }
 
     private void registerClick() {
@@ -105,12 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 layout.setVisibility(View.GONE);
                 if (!switchResult.isChecked()) {
 
-                    SpannableStringBuilder title_string = new SpannableStringBuilder(getString(R.string.success_text));
-                    int color = getResources().getColor(android.R.color.holo_orange_dark);
-                    ForegroundColorSpan fcs = new ForegroundColorSpan(color);
-                    title_string.setSpan(fcs, 20, title_string.length(), 0);
-
-                    title.setText(title_string);
+                    title.setText(titleColor.getTitle());
                     layoutResult.setVisibility(View.VISIBLE);
                     layoutResult.setBackgroundColor(getResources().getColor(R.color.branco));
                     textInfo.setText(getString(R.string.success_body));

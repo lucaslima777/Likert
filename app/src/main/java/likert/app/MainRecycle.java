@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -20,6 +18,7 @@ import likert.app.Callback.OnClickRecycler;
 import likert.app.MainRecycler.MainAdapter;
 import likert.app.MainRecycler.MainModel;
 import likert.app.Util.AddArrays;
+import likert.app.Util.TitleColor;
 
 import static likert.app.Util.Constant.MAX;
 
@@ -41,6 +40,7 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
     private TextView textInfo;
     private TextView refresh;
     private AddArrays addArrays;
+    private TitleColor titleColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
         initializeData();
         MainAdapter mAdapter = new MainAdapter(mainItemsList, this);
         mRecyclerView.setAdapter(mAdapter);
+        titleColor = new TitleColor(this);
 
     }
 
@@ -117,12 +118,7 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
                 layout.setVisibility(View.GONE);
                 if (!switchResult.isChecked()) {
 
-                    SpannableStringBuilder title_string = new SpannableStringBuilder(getString(R.string.success_text));
-                    int color = getResources().getColor(android.R.color.holo_orange_dark);
-                    ForegroundColorSpan fcs = new ForegroundColorSpan(color);
-                    title_string.setSpan(fcs, 20, title_string.length(), 0);
-
-                    title.setText(title_string);
+                    title.setText(titleColor.getTitle());
                     layoutResult.setVisibility(View.VISIBLE);
                     layoutResult.setBackgroundColor(getResources().getColor(R.color.branco));
                     textInfo.setText(getString(R.string.success_body));
