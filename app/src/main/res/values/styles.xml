@@ -17,4 +17,22 @@
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Theme.Switch" parent="Theme.AppCompat.Light">
+
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@android:color/black</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@android:color/holo_green_dark</item>
+        <item name="colorSwitchThumbNormal">@android:color/holo_green_dark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated,
+             which is used to tint widgets -->
+        <item name="colorAccent">@android:color/holo_red_light</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight, and colorSwitchThumbNormal. -->
+
+    </style>
+
 </resources>

@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -63,6 +65,28 @@ public class MainRecycle extends AppCompatActivity implements OnClickRecycler, V
         MainAdapter mAdapter = new MainAdapter(mainItemsList, this);
         mRecyclerView.setAdapter(mAdapter);
         titleColor = new TitleColor(this);
+
+        final int max = 140;
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (count <= max) {
+                    counterText.setText((max - s.toString().length()) + " caracteres");
+                } else {
+                    counterText.setText("0 caracteres");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
     }
 
